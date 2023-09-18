@@ -1,4 +1,6 @@
 
+all: build
+
 build: EXECDIR
 	cc pyramid.c -o exec/pyramid 
 

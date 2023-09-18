@@ -8,7 +8,7 @@ int main()
         char name[60U];
         int id;
         int sys;
-    }
+    };
 
     struct myStruct customStruct[2] = {};
 

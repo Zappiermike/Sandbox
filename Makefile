@@ -1,6 +1,10 @@
 
+build: EXECDIR
+	cc pyramid.c -o exec/pyramid 
 
 
-pyramid: pyramid.c
-	cc pyramid.c -o pyramid 
+EXECDIR:
+	mkdir -p exec
 
+clean:
+	rm -rf exec

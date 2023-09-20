@@ -1,16 +1,21 @@
 CC = gcc
-CFLAGS = -g
+CFLAGS = -Wall
+BIN_DIR = bin
 
+# Search for all .c files in the current directory
+SRCS := $(wildcard *.c)
+# Generate a list of executable targets by removing the .c extension
+EXECS := $(SRCS:%.c=$(BIN_DIR)/%)
 
+# Default target: build all executables
+all: $(EXECS)
 
-all: build
+$(shell mkdir -p $(BIN_DIR))
 
-build: EXECDIR
-	cc pyramid.c -o exec/pyramid 
+# Rule to build an executable from a .c file
+$(BIN_DIR)/%: %.c
+	$(CC) $(CFLAGS) -o $@ $<
 
-
-EXECDIR:
-	mkdir -p exec
-
+# Clean up generated files
 clean:
-	rm -rf exec
+	rm -rf $(BIN_DIR)

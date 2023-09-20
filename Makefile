@@ -1,3 +1,7 @@
+CC = gcc
+CFLAGS = -g
+
+
 
 all: build
 

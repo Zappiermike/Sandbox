@@ -15,7 +15,7 @@ int main()
     for(int i = 0; i < 2; i++)
     {
         char* buf = customStruct[i].name;
-        sprintf(buf, "%s%d%s", "hello", "world", (i));
+        sprintf(buf, "%s%s%d", "hello", "world", (i));
         printf("%s", customStruct[i].name);
     }
 }
